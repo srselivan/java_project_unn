@@ -5,6 +5,6 @@ public class Bzoo {
         if (act == Actions.walk) return new Walk();
         if (act == Actions.see_animal) return new SeeAnimal();
 
-        throw new Exception("not find");
+        throw new Exception("not find action");
     }
 }

@@ -6,22 +6,25 @@ public class Main {
 
         Izoo action;
         Zoo z = new Zoo();
-        z.addAnimal(new Animal("name1"),1);
-        z.addAnimal(new Animal("name2"),2);
+        try {
+            z.addAnimal(new Animal("name1"), 1);
+            z.addAnimal(new Animal("name2"), 2);
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
 
         try {
             action = Bzoo.build(Actions.walk);
             System.out.println(action.action(z));
-        }
-        catch (Exception ex){
+        } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
 
         try {
             action = Bzoo.build(Actions.see_animal);
             System.out.println(action.action("name3", z));
-        }
-        catch (Exception ex){
+        } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
 
