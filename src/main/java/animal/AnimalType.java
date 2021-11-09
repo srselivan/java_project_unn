@@ -5,11 +5,6 @@ import java.util.HashMap;
 public class AnimalType extends AnimalName{
     private final AnimalTypes type;
 
-    private enum AnimalTypes{
-        Predator,
-        Herbivorous
-    }
-
     private final HashMap<String, AnimalTypes> types = new HashMap<>();
 
     private void initMap(){

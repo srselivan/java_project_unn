@@ -2,17 +2,18 @@ package zoo;
 
 import animal.Animal;
 
-public class Zoo {
-    private final int MAX_ANIMAL_COUNT = 4;
-    private Animal[] cell = new Animal[MAX_ANIMAL_COUNT];
+import java.util.ArrayList;
 
-    public void addAnimal(Animal animal, int num) throws Exception {
-        if (num < 0 || num > MAX_ANIMAL_COUNT) throw new Exception("incorrect num");
-        if (cell[num] == null)
-            cell[num] = animal;
+public class Zoo {
+    private ArrayList<Cage> cages = new ArrayList<>();
+
+    public void addCage(){
+        cages.add(new Cage());
     }
 
-    public Animal[] getCell() {
-        return cell;
+    public ArrayList<Cage> getCages() throws Exception {
+        if(cages.isEmpty())
+            throw new Exception("zoo is empty");
+        return cages;
     }
 }

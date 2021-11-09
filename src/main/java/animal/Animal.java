@@ -26,4 +26,8 @@ public class Animal {
     public AnimalName getName() {
         return name;
     }
+
+    public AnimalType getType() {
+        return type;
+    }
 }

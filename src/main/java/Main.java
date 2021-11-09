@@ -7,26 +7,28 @@ public class Main {
         Izoo action;
         Zoo z = new Zoo();
         try {
-            z.addAnimal(new Animal("name1"), 1);
-            z.addAnimal(new Animal("name2"), 2);
+            z.addCage();
+            z.addCage();
+            z.addCage();
+            z.getCages().get(0).addAnimal(new Animal("name1"));
+            z.getCages().get(2).addAnimal(new Animal("name2"));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-
 
         try {
             action = Bzoo.build(Actions.walk);
-            System.out.println(action.action(z));
+            System.out.println(action.seeAnimal("name1",z));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
 
-        try {
+/*        try {
             action = Bzoo.build(Actions.see_animal);
             System.out.println(action.action("name3", z));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
-        }
+        }*/
 
 
     }

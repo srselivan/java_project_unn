@@ -1,21 +1,37 @@
 package zoo;
 
 import animal.Animal;
+import animal.AnimalTypes;
 
 public class Walk implements Izoo{
     @Override
-    public String action(Zoo zoo) {
+    public String walk(Zoo zoo){
         String strOut = "";
-        for (Animal var : zoo.getCell()){
-            if (var == null) strOut += "cell is empty";
-            else strOut += var.toString();
-            strOut += "\n";
+        try {
+            for(Cage cage : zoo.getCages()){
+                try {
+                    strOut += cage.getAnimal().toString();
+                }
+                catch (Exception ex){
+                    strOut += ex.getMessage();
+                }
+                strOut += '\n';
+            }
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
         return strOut;
     }
 
     @Override
-    public String action(String name, Zoo zoo) throws Exception {
+    public String seeAnimal(String name, Zoo zoo) throws Exception {
         throw new Exception("not available");
     }
+
+    @Override
+    public int countT(Zoo z, AnimalTypes type) throws Exception {
+        throw new Exception("not available");
+    }
+
 }
