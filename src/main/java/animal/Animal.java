@@ -1,33 +1,28 @@
 package animal;
 
-public class Animal {
-    AnimalName name;
-    AnimalClass _class;
-    AnimalType type;
-    AnimalVoice voice;
+abstract class Animal implements IAnimal{
+    String name;
+    AnimalTypes type;
+    String voice;
 
-    public Animal(String name) {
-        this.name = new AnimalName(name);
-        _class = new AnimalClass(name);
-        type = new AnimalType(name);
-        voice = new AnimalVoice(name);
+    public Animal(String name, AnimalTypes type, String voice) {
+        this.name = name;
+        this.type = type;
+        this.voice = voice;
     }
 
     @Override
-    public String toString() {
-        return "Animal{" +
-                "name=" + name.toString() +
-                ", _class=" + _class.toString() +
-                ", type=" + type.toString() +
-                ", voice=" + voice.toString() +
-                '}';
-    }
-
-    public AnimalName getName() {
+    public String getName() {
         return name;
     }
 
-    public AnimalType getType() {
+    @Override
+    public AnimalTypes getType() {
         return type;
+    }
+
+    @Override
+    public String show() {
+        return name + ", type:" + type + ", voice:'" + voice + "'";
     }
 }

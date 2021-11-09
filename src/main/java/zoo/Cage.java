@@ -1,18 +1,18 @@
 package zoo;
 
-import animal.Animal;
+import animal.IAnimal;
 
 public class Cage {
-    Animal animal = null;
+    IAnimal animal = null;
 
-    public void addAnimal(Animal animal) throws Exception {
-        if (animal == null)
+    public void addAnimal(IAnimal animal) throws Exception {
+        if (this.animal != null)
             throw new Exception("cage is full");
         this.animal = animal;
     }
 
-    public Animal getAnimal() throws Exception {
-        if (animal == null)
+    public IAnimal getAnimal() throws Exception {
+        if (this.animal == null)
             throw new Exception("cage is empty");
         return animal;
     }

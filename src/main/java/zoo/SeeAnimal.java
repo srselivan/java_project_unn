@@ -1,7 +1,8 @@
 package zoo;
 
-import animal.Animal;
 import animal.AnimalTypes;
+
+import java.util.ArrayList;
 
 public class SeeAnimal implements Izoo{
     @Override
@@ -13,7 +14,7 @@ public class SeeAnimal implements Izoo{
     public String seeAnimal(String name, Zoo zoo){
         try {
             for (Cage cage : zoo.getCages()){
-                if( cage.getAnimal().getName().toString() == name ) return cage.getAnimal().toString();
+                if( cage.getAnimal().getName() == name ) return cage.getAnimal().show();
             }
         }
         catch (Exception ex) {
@@ -27,4 +28,8 @@ public class SeeAnimal implements Izoo{
         throw new Exception("not available");
     }
 
+    @Override
+    public ArrayList<String> types(Zoo z) throws Exception{
+        throw new Exception("not available");
+    }
 }

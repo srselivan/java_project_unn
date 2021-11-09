@@ -1,7 +1,8 @@
 package zoo;
 
-import animal.Animal;
 import animal.AnimalTypes;
+
+import java.util.ArrayList;
 
 public class Walk implements Izoo{
     @Override
@@ -10,7 +11,7 @@ public class Walk implements Izoo{
         try {
             for(Cage cage : zoo.getCages()){
                 try {
-                    strOut += cage.getAnimal().toString();
+                    strOut += cage.getAnimal().show();
                 }
                 catch (Exception ex){
                     strOut += ex.getMessage();
@@ -34,4 +35,8 @@ public class Walk implements Izoo{
         throw new Exception("not available");
     }
 
+    @Override
+    public ArrayList<String> types(Zoo z) throws Exception{
+        throw new Exception("not available");
+    }
 }

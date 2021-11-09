@@ -1,4 +1,7 @@
-import animal.Animal;
+
+import animal.AnimalTypes;
+import animal.Wolf;
+import animal.Cow;
 import zoo.*;
 
 public class Main {
@@ -10,22 +13,31 @@ public class Main {
             z.addCage();
             z.addCage();
             z.addCage();
-            z.getCages().get(0).addAnimal(new Animal("name1"));
-            z.getCages().get(2).addAnimal(new Animal("name2"));
+            z.addCage();
+            z.getCages().get(0).addAnimal(new Wolf("name"));
+            z.getCages().get(2).addAnimal(new Cow("name2"));
+            z.getCages().get(3).addAnimal(new Wolf("name3"));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
 
         try {
             action = Bzoo.build(Actions.walk);
-            System.out.println(action.seeAnimal("name1",z));
+            System.out.println(action.walk(z));
+
+            action = Bzoo.build(Actions.types);
+            System.out.println(action.types(z));
+
+            action = Bzoo.build(Actions.countT);
+            System.out.println(action.countT(z, AnimalTypes.Herbivorous));
+            System.out.println(action.countT(z, AnimalTypes.Predator));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
 
-/*        try {
+ /*      try {
             action = Bzoo.build(Actions.see_animal);
-            System.out.println(action.action("name3", z));
+            System.out.println(action.seeAnimal("name3", z));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }*/
