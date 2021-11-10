@@ -4,7 +4,7 @@ import animal.AnimalTypes;
 
 import java.util.ArrayList;
 
-public class Types implements Izoo{
+public class SeeCages implements Izoo{
     @Override
     public String walk(Zoo zoo) throws Exception {
         throw new Exception("not available");
@@ -21,23 +21,25 @@ public class Types implements Izoo{
     }
 
     @Override
-    public ArrayList<String> types(Zoo z) {
-        ArrayList<String> uTypes = new ArrayList<>();
+    public ArrayList<String> types(Zoo z) throws Exception {
+        throw new Exception("not available");
+    }
+
+    @Override
+    public String seeCages(Zoo z){
+        String strOut = "";
         try{
-            for (Cage cage : z.getCages()){
-                try {
-                    if(!uTypes.contains(cage.getAnimal().getType().toString()))
-                        uTypes.add(cage.getAnimal().getType().toString());
-                } catch (Exception ex){}
+            for(Cage cage : z.getCages()){
+                try{
+                    strOut += cage.getAnimal().getVoice();
+                } catch (Exception ex){
+                    strOut += ex.getMessage();
+                }
+                strOut += "\n";
             }
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-        return uTypes;
-    }
-
-    @Override
-    public String seeCages(Zoo z) throws Exception {
-        throw new Exception("not available");
+        return strOut;
     }
 }

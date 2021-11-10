@@ -31,6 +31,9 @@ public class Main {
             action = Bzoo.build(Actions.countT);
             System.out.println(action.countT(z, AnimalTypes.Herbivorous));
             System.out.println(action.countT(z, AnimalTypes.Predator));
+
+            action = Bzoo.build(Actions.see_cages);
+            System.out.println(action.seeCages(z));
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }

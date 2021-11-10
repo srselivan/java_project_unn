@@ -22,6 +22,11 @@ abstract class Animal implements IAnimal{
     }
 
     @Override
+    public String getVoice() {
+        return voice;
+    }
+
+    @Override
     public String show() {
         return name + ", type:" + type + ", voice:'" + voice + "'";
     }

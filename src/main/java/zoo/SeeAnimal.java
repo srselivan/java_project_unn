@@ -32,4 +32,9 @@ public class SeeAnimal implements Izoo{
     public ArrayList<String> types(Zoo z) throws Exception{
         throw new Exception("not available");
     }
+
+    @Override
+    public String seeCages(Zoo z) throws Exception {
+        throw new Exception("not available");
+    }
 }

@@ -4,4 +4,5 @@ public interface IAnimal {
     String getName();
     AnimalTypes getType();
     String show();
+    String getVoice();
 }
