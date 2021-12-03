@@ -28,6 +28,6 @@ abstract class Animal implements IAnimal{
 
     @Override
     public String show() {
-        return name + ", type:" + type + ", voice:'" + voice + "'";
+        return name + ", type: " + type + ", voice: '" + voice + "'";
     }
 }
